@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mc-datanalytics.github.io/us-companion-animal-open-data/sitemap.xml

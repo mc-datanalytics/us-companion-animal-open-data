@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+  <title>U.S. Companion Animal Adoption Listing Inventory &amp; VBO Crosswalk Notes</title>
+  <meta name="description" content="Technical field notes and companion guides referencing Adopt'Animaux active U.S. dog and cat adoption listing inventory datasets and deterministic Vertebrate Breed Ontology (VBO) source-label crosswalk.">
+  <link rel="canonical" href="https://mc-datanalytics.github.io/us-companion-animal-open-data/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "U.S. Companion Animal Adoption Listing Inventory & VBO Crosswalk Notes",
+    "description": "Companion documentation and adopter field guides referencing canonical U.S. adoption listing inventory reports and deterministic Vertebrate Breed Ontology (VBO) source-label mappings published on Adopt'Animaux.",
+    "url": "https://mc-datanalytics.github.io/us-companion-animal-open-data/",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "about": {
+      "@type": "Dataset",
+      "name": "US adoption source-label to Vertebrate Breed Ontology exact-match crosswalk",
+      "url": "https://adoptanimaux.com/en/adoption/data/us/breed-types"
+    }
+  }
+  </script>
+  <style>
+    :root { --bg:#fcfcfa; --fg:#1d242b; --muted:#52606d; --accent:#0f5c4d; --border:#e2e8f0; --card:#ffffff; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background:var(--bg); color:var(--fg); line-height:1.68; }
+    header { background:#0f5c4d; color:#fff; padding:3rem 1.25rem; }
+    .wrap { max-width:920px; margin:0 auto; }
+    header h1 { margin:0 0 0.75rem; font-size:2.05rem; line-height:1.22; }
+    header p { margin:0; font-size:1.08rem; opacity:0.94; max-width:780px; }
+    main { max-width:920px; margin:2rem auto; padding:0 1.25rem 3rem; }
+    h2 { color:#0f5c4d; border-bottom:1px solid var(--border); padding-bottom:0.4rem; margin-top:2.2rem; }
+    .notice { background:#f0f7f5; border-left:4px solid #0f5c4d; padding:0.95rem 1.15rem; border-radius:6px; font-size:0.95rem; margin:1.2rem 0; }
+    .grid { list-style:none; padding:0; display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1rem; }
+    .card { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:1.15rem 1.25rem; }
+    .card h3 { margin:0 0 0.45rem; font-size:1.05rem; }
+    .card p { margin:0; color:var(--muted); font-size:0.94rem; }
+    a { color:var(--accent); text-decoration:underline; text-underline-offset:2px; }
+    table { width:100%; border-collapse:collapse; margin:1rem 0; background:#fff; border:1px solid var(--border); }
+    th, td { text-align:left; padding:0.7rem 0.85rem; border-bottom:1px solid var(--border); font-size:0.95rem; }
+    th { background:#f4f7f6; font-weight:600; }
+    footer { border-top:1px solid var(--border); padding:1.5rem 1.25rem; text-align:center; color:var(--muted); font-size:0.9rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>U.S. Companion Animal Adoption Listing Inventory &amp; VBO Crosswalk Notes</h1>
+      <p>Companion documentation and adopter readiness guides referencing the canonical U.S. dog and cat adoption listing datasets published on Adopt'Animaux.</p>
+    </div>
+  </header>
+  <main>
+    <div class="notice">
+      <strong>Methodological Scope:</strong> All datasets referenced here measure <em>active, location-ready adoption listing inventory</em> represented in published U.S. city hubs (not shelter intake, adoption outcomes, euthanasia, or unique animal counts). Source-label crosswalks against the <strong>Vertebrate Breed Ontology (VBO, release 2026-04-15)</strong> use deterministic species-scoped Unicode NFKC exact matching against canonical labels and <code>EXACT</code> synonyms (excluding national breed populations <code>VBO:0300020</code>) and do not represent genetic breed verification.
+    </div>
+
+    <section>
+      <h2>Canonical U.S. Datasets &amp; Directories on Adopt'Animaux</h2>
+      <p>Primary canonical data tables, machine-readable CSV/JSON snapshots (with SHA-256 checksums), and live adoption directories are hosted directly on <a href="https://adoptanimaux.com/en/">Adopt'Animaux U.S. Pet Adoption</a>:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Canonical Resource</th>
+            <th>Scope &amp; Verification Standard</th>
+            <th>Canonical URL</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>National U.S. Adoption Listing Inventory</strong></td>
+            <td>Dated snapshot of active dog, cat &amp; companion-animal listings across U.S. city hubs</td>
+            <td><a href="https://adoptanimaux.com/en/adoption/data/us">U.S. Adoption Data Hub</a></td>
+          </tr>
+          <tr>
+            <td><strong>Source-Label to VBO Exact-Match Crosswalk</strong></td>
+            <td>190 unique exact VBO candidates across 266 source labels (47,301 / 54,067 labeled records, 87.49%)</td>
+            <td><a href="https://adoptanimaux.com/en/adoption/data/us/breed-types">U.S. Breed &amp; Type Dataset</a></td>
+          </tr>
+          <tr>
+            <td><strong>Data Pipeline &amp; Limitations Methodology</strong></td>
+            <td>Normalization rules, snapshot caveats, and source attribution guidelines</td>
+            <td><a href="https://adoptanimaux.com/en/adoption/data/methodology">Read Data Methodology</a></td>
+          </tr>
+          <tr>
+            <td><strong>State-Level Listing Inventory Reports</strong></td>
+            <td>Aggregated city-hub breakdowns &amp; downloadable state CSVs</td>
+            <td>
+              <a href="https://adoptanimaux.com/en/adoption/data/us/ca">California</a> ·
+              <a href="https://adoptanimaux.com/en/adoption/data/us/tx">Texas</a> ·
+              <a href="https://adoptanimaux.com/en/adoption/data/us/fl">Florida</a> ·
+              <a href="https://adoptanimaux.com/en/adoption/data/us/ny">New York</a> ·
+              <a href="https://adoptanimaux.com/en/adoption/data/us/nc">North Carolina</a>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Live U.S. Adoption Directory &amp; Species Hubs</strong></td>
+            <td>Searchable listings and adopter checklists across all 50 states</td>
+            <td>
+              <a href="https://adoptanimaux.com/en/adoption/directory/us">U.S. Directory</a> ·
+              <a href="https://adoptanimaux.com/en/adoption/dog">Dogs</a> ·
+              <a href="https://adoptanimaux.com/en/adoption/cat">Cats</a> ·
+              <a href="https://adoptanimaux.com/en/associations">Shelter Resources</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Regional Specialty Rescue &amp; Adopter Readiness Guides</h2>
+      <ul>
+        <li><a href="https://adoptanimaux.com/en/adoption/rescue/golden-retriever/texas">Golden Retriever Rescue in Texas</a> &amp; <a href="https://adoptanimaux.com/en/adoption/rescue/german-shepherd/texas">German Shepherd Rescue in Texas</a></li>
+        <li><a href="https://adoptanimaux.com/en/adoption/rescue/french-bulldog/california">French Bulldog Rescue in California</a> &amp; <a href="https://adoptanimaux.com/en/adoption/rescue/labrador-retriever/california">Labrador Retriever Rescue in California</a></li>
+        <li><a href="https://adoptanimaux.com/en/adoption/rescue/maine-coon/florida">Maine Coon Cat Rescue in Florida</a> &amp; <a href="https://adoptanimaux.com/en/adoption/rescue/dachshund/florida">Dachshund Rescue in Florida</a></li>
+        <li><a href="https://adoptanimaux.com/en/adoption/rescue/senior-dogs/new-york">Senior Dog Adoption in New York</a>, <a href="https://adoptanimaux.com/en/adoption/rescue/siamese/new-york">Siamese Cat Rescue in New York</a> &amp; <a href="https://adoptanimaux.com/en/adoption/rescue/australian-shepherd/colorado">Australian Shepherd Rescue in Colorado</a></li>
+        <li><a href="https://adoptanimaux.com/en/blog/free-dog-adoption-us">Fee-Waived &amp; Sponsored Dog Adoption Programs in the U.S.</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Companion Welfare &amp; Data Documentation Articles</h2>
+      <ul class="grid">
+        
+      <li class="card">
+        <h3><a href="./guides/standardized-breed-crosswalk-vbo-shelter-datasets.html">Standardizing Shelter Breed Labels with the Vertebrate Breed Ontology (VBO)</a></h3>
+        <p>undefined</p>
+      </li>
+
+      <li class="card">
+        <h3><a href="./guides/us-municipal-vs-foster-animal-shelters-2026.html">How U.S. Municipal Animal Control Facilities and Foster-Based Rescues Coordinate Live Outcomes</a></h3>
+        <p>undefined</p>
+      </li>
+
+      <li class="card">
+        <h3><a href="./guides/fee-waived-dog-adoption-events-united-states.html">Evaluating Fee-Waived Dog Adoption Programs Across U.S. County Shelters</a></h3>
+        <p>undefined</p>
+      </li>
+
+      <li class="card">
+        <h3><a href="./guides/reproducible-animal-shelter-data-methodology-open-schemas.html">Designing Reproducible Open Data Pipelines for Companion Animal Shelter Reporting</a></h3>
+        <p>undefined</p>
+      </li>
+
+      <li class="card">
+        <h3><a href="./guides/verifying-501c3-animal-rescue-nonprofits-us.html">How to Verify Legitimate 501(c)(3) Animal Rescues Before Submitting an Adoption Application</a></h3>
+        <p>undefined</p>
+      </li>
+
+      <li class="card">
+        <h3><a href="./guides/adopting-senior-dogs-new-york-apartments-suburbs.html">Why Senior Dogs Thrive in New York Apartments and Quiet Suburban Homes</a></h3>
+        <p>undefined</p>
+      </li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <p>Published under CC BY 4.0 · Companion Documentation · Canonical datasets hosted at <a href="https://adoptanimaux.com/en/adoption/data/us">adoptanimaux.com/en/adoption/data/us</a></p>
+  </footer>
+</body>
+</html>

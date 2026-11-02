@@ -1,0 +1,10 @@
+site_name: U.S. Companion Animal Adoption Listing & VBO Documentation
+site_description: Companion documentation referencing Adopt'Animaux active U.S. adoption listing inventory datasets and deterministic VBO crosswalks.
+site_url: https://us-companion-animal-open-data.readthedocs.io/
+theme:
+  name: readthedocs
+nav:
+  - Overview: index.md
+  - VBO Breed Crosswalk: vbo-breed-crosswalk.md
+  - Open Data Methodology: methodology.md
+  - 501(c)(3) Rescue Verification: rescue-verification.md

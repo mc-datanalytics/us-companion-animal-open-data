@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+  <title>Designing Reproducible Open Data Pipelines for Companion Animal Shelter Reporting</title>
+  <meta name="description" content="Technical overview of deduplication, intake-outcome cohort tracking, and entity resolution across fragmented U.S. shelter feeds.">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Designing Reproducible Open Data Pipelines for Companion Animal Shelter Reporting","description":"Technical overview of deduplication, intake-outcome cohort tracking, and entity resolution across fragmented U.S. shelter feeds.","datePublished":"2026-11-02","inLanguage":"en-US","author":{"@type":"Organization","name":"Companion Animal Data & Rescue Research Desk"}}</script>
+  <style>
+    :root { --bg: #fcfcfb; --fg: #18222d; --muted: #52606d; --accent: #0f5c4d; --border: #dde3e9; --card: #f4f7f6; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--fg); font-family: Georgia, "Iowan Old Style", "Times New Roman", serif; line-height: 1.72; font-size: 18px; }
+    main { max-width: 780px; margin: 0 auto; padding: 3rem 1.4rem 4rem; }
+    .eyebrow { font-family: system-ui, -apple-system, sans-serif; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--accent); font-weight: 600; margin: 0 0 0.6rem; }
+    h1 { font-size: 2.1rem; line-height: 1.22; margin: 0 0 1rem; color: #0f172a; }
+    h2 { font-family: system-ui, -apple-system, sans-serif; font-size: 1.32rem; margin: 2.2rem 0 0.75rem; color: #102a43; border-bottom: 1px solid var(--border); padding-bottom: 0.35rem; }
+    .lead { font-size: 1.13rem; color: #243b53; background: var(--card); padding: 1.1rem 1.25rem; border-left: 4px solid var(--accent); border-radius: 4px; }
+    p, li { margin-bottom: 0.9rem; }
+    a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+    a:hover { opacity: 0.85; }
+    .table-wrap { overflow-x: auto; margin: 1.25rem 0; }
+    table { width: 100%; border-collapse: collapse; font-family: system-ui, -apple-system, sans-serif; font-size: 0.92rem; }
+    th, td { text-align: left; padding: 0.65rem 0.8rem; border: 1px solid var(--border); }
+    th { background: var(--card); font-weight: 600; }
+    .references { margin-top: 2.5rem; font-size: 0.95rem; color: var(--muted); }
+    footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid var(--border); font-family: system-ui, -apple-system, sans-serif; font-size: 0.84rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <main>
+<nav aria-label="Breadcrumb" style="max-width:780px;margin:1.25rem auto 0;padding:0 1.25rem;font-size:0.9rem;"><a href="https://mc-datanalytics.github.io/us-companion-animal-open-data/">← U.S. Companion Animal Adoption Listing Open Data</a></nav>
+    <article>
+<header class="doc-header">
+  <p class="eyebrow">Data Engineering &amp; Welfare · November 2026</p>
+  <h1>Designing Reproducible Open Data Pipelines for Companion Animal Shelter Reporting</h1>
+  <p class="lead">Public policy debates around municipal shelter funding, spay/neuter access, and interstate rescue transport rely on clean data—yet raw shelter exports rarely share uniform schemas, species codes, or timestamp conventions.</p>
+</header>
+<section>
+  <h2>Solving Entity Resolution Across Shelter Transfers</h2>
+  <p>When an animal moves from a rural county impound facility to an urban 501(c)(3) foster group, naive aggregation scripts count two separate intakes unless transfer identifiers and breed/age metadata are normalized carefully. Equally important, public dashboards must separate active adoptable inventory from historical outcome archives.</p>
+  <p>Researchers and civic technologists can inspect full normalization rules, ontology mappings, and data hygiene standards in the <a href="https://adoptanimaux.com/en/adoption/data/methodology">AdoptAnimaux open data methodology</a>, alongside empirical distributions in the <a href="https://adoptanimaux.com/en/adoption/data/us/breed-types">U.S. breed and type dataset</a>.</p>
+</section>
+<section>
+  <h2>Key Validation Gates in Modern Shelter Aggregators</h2>
+  <ul>
+    <li>Schema validation separating species, primary/secondary breed assertions, coat pattern, sex, and life-stage cohort.</li>
+    <li>Automated staleness checks so animals already adopted or reclaimed do not linger on public search pages.</li>
+    <li>Explicit attribution back to the originating municipal shelter or nonprofit rescue organization.</li>
+  </ul>
+</section>
+<section class="references">
+  <h2>References &amp; Public Data Sources</h2>
+  <ul>
+    <li><a href="https://adoptanimaux.com/en/adoption/data/methodology">AdoptAnimaux Open Data Methodology</a> — Technical documentation of companion-animal data normalization.</li>
+    <li><a href="https://www.shelteranimalscount.org/">Shelter Animals Count — National Database Definitions</a> — Standardized shelter intake and outcome matrix definitions.</li>
+  </ul>
+</section>
+    </article>
+    <footer>Open companion-animal welfare &amp; shelter transparency brief · United States edition (2026).</footer>
+  </main>
+</body>
+</html>
